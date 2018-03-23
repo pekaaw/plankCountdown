@@ -60,7 +60,7 @@ FM.plankCountdown = FM.plankCountdown || function plankCountdown() {
             return Math.abs(to.getTime() - from.getTime());
         }
         let hours = function (from, to) { return Math.floor(timeDiff(from, to) / (1000 * 3600)); }
-        let minutes = function (from, to) { return Math.ceil(timeDiff(from, to) / (1000 * 60)); }
+        let minutes = function (from, to) { return Math.floor(timeDiff(from, to) / (1000 * 60)); }
         let seconds = function (from, to) { return Math.ceil(timeDiff(from, to) / 1000); }
 
         return {
