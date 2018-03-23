@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            * {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            section#appWrapper {
+                margin: 0;
+                border: 0;
+                position: relative;
+                background-color: black;
+                height: 100vh;
+                width: 100vw;
+                overflow: hidden;
+                color: red;
+            }
+            section#app {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                max-height: 90vh;
+                max-width: 90vw;
+                text-align: center;
+                width: 50vh;
+                border-radius: 100%;
+                font-family: sans-serif;
+                font-size: 7vh;
+            }
+            section#app::after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+            }
+            section#app .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            section#app span {
+                font-weight: bolder;
+                font-size: 1.5em;
+            }
+            svg.visualTimer {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            svg.visualTimer circle.visualTimerForeground {
+                stroke: orange;
+            }
+            svg.visualTimer circle.visualTimerBackground {
+                stroke: darkslategrey;
+            }
+            img.exercise {
+                width: 98%;
+                height: 98%;
+                position: absolute;
+                top: 1%;
+                left: 1%;
+                border-radius: 100%;
+            }
+            audio {
+                visibility: hidden;
+            }
+            section#appWrapper span.gif_credit {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: 0.2em;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="appWrapper">
+            <section id="app">
+                <audio class="plankingIn5minutes" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=planking%20in%205%20minutes&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn1minute" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=planking%20in%201%20minute&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn10" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=planking%20in%2010%20seconds&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn5" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=planking%20in%205&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn4" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=4&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn3" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=3&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn2" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=2&tl=en&client=tw-ob"></audio>
+                <audio class="plankingIn1" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=1&tl=en&client=tw-ob"></audio>
+                <audio class="start" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=start%20planking&tl=en&client=tw-ob"></audio>
+                <audio class="left30seconds" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=30%20seconds%20left&tl=en&client=tw-ob"></audio>
+                <audio class="left10seconds" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=10%20seconds%20left&tl=en&client=tw-ob"></audio>
+                <audio class="done" src="https://translate.google.com.vn/translate_tts?ie=UTF-8&q=well%20done&tl=en&client=tw-ob"></audio>
+    
+                <div class="content">
+                    <span id="minutes"></span>:<span id="seconds"></span>
+                </div>
+                <svg class="visualTimer" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="47.5" stroke-width="5" fill="transparent" class="visualTimerBackground" transform="translate(50,50) rotate(-90 0 0) translate(-50,-50)" />
+                    <circle cx="50" cy="50" r="47.5" stroke-width="5" fill="transparent" class="visualTimerForeground" transform="translate(50,50) rotate(-270 0 0) scale(-1,1) translate(-50,-50)" />
+                </svg>
+            </section>
+            <span class="gif_credit">gif by @justingammon</span>
+        </section>
+        <script src="app.js"></script>
+        <script>FM.plankCountdown()</script>
+    </body>
+</html>
