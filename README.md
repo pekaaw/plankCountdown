@@ -10,4 +10,6 @@ Enjoy!
 
 ![screenshot](screenshot.png)
 
+[Watch me live...](http://htmlpreview.github.io/?https://raw.githubusercontent.com/pekaaw/plankCountdown/master/index.html)
+
 > credit to @justingammon for the nice gif ^^
