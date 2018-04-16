@@ -35,7 +35,8 @@ FM.plankCountdown = FM.plankCountdown || function plankCountdown() {
 
     function nextPlankTime() {
         var now = new Date();
-        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 1, 0, 0, 0);
+        var nextPlankingHour = now.getMinutes() > 55 ? now.getHours() + 1 : now.getHours();
+        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), nextPlankingHour, 55, 0, 0);
     }
 
     function updateVisualTimer(fraction) {
